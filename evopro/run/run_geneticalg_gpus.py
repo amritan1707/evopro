@@ -32,10 +32,18 @@ def run_genetic_alg_gpus(run_dir, af2_flags_file, score_func, startingseqs, pool
         for chain in stabilize_monomer:
             lengths.append([x + vary_length for x in startingseqs[0].get_lengths([chain])])
 
-    #from evopro.genetic_alg.geneticalg_helpers import af2_init
-    from run_af2 import af2, af2_init
-    print("initializing distributor")
-    dist = Distributor(n_workers, af2_init, af2_flags_file, lengths)
+    print(lengths)
+
+    if use_of:
+        from evopro.genetic_alg.geneticalg_helpers import of_init
+        sys.path.append('/proj/kuhl_lab/OmegaFold/')
+        dist = Distributor(n_workers, of_init, af2_flags_file, lengths)
+    
+    else:
+        #from evopro.genetic_alg.geneticalg_helpers import af2_init
+        from run_af2 import af2, af2_init
+        print("initializing distributor")
+        dist = Distributor(n_workers, af2_init, af2_flags_file, lengths)
 
     scored_seqs = {}
     curr_iter = 1
