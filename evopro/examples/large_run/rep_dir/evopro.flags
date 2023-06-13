@@ -4,11 +4,18 @@
 --score_file /proj/kuhl_lab/evopro/evopro/score_funcs/score_cd19.py
 --score_func score_binder_clashpenalty
 --rmsd_func score_binder_rmsd
+<<<<<<< HEAD
 --stabilize_monomer B
+=======
+--af2_preds_extra B
+>>>>>>> other/main
 --define_contact_area A1-A263
 --plot_scores_top
 --plot_scores_avg
 --plot_scores_median
 --mpnn_freq 2
 --plot_confidences
+<<<<<<< HEAD
 --repeat_af2
+=======
+>>>>>>> other/main
