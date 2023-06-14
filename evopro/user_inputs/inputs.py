@@ -93,14 +93,14 @@ def getEvoProParser() -> FileArgumentParser:
     parser.add_argument('--define_contact_area',
                         default=None,
                         type=str,
-                        help='File defining residues on target interface to be targeted for contacts. Default is None.')
-    
+                        help='Defining residues on target interface to be targeted for contacts. Default is None.')
+
     parser.add_argument('--bonus_contacts',
                         default=None,
                         type=str,
                         help='File defining residues on target interface to be given a bonus for making contacts, followed by the'
                         'distance cutoff. Default is None and 4A.')
-    
+
     parser.add_argument('--penalize_contacts',
                         default=None,
                         type=str,
@@ -190,11 +190,6 @@ def getEvoProParser() -> FileArgumentParser:
                         type=str,
                         help='Number of mutations made as a percentage of sequence length.'
                         'Default is 0.125 for every iteration. If more than one value is provided, number of iterations will be split evenly and assigned.')
-    
-    parser.add_argument('--af2_preds',
-                        default="AB",
-                        type=str,
-                        help='Chain ID permutations to run through individual AF2 runs, separated by commas. Only used for multistate design. Default is None.')
     
     parser.add_argument('--af2_preds_extra',
                         default=None,

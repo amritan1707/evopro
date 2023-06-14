@@ -1,3 +1,7 @@
 --sequence_files chainA.txt chainB.txt
 --representative_directory rep_dir
+<<<<<<< HEAD
 --num_replicates 2
+=======
+--num_replicates 3
+>>>>>>> other/main
